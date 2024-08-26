@@ -195,3 +195,21 @@ button img{
     display: none;
     margin-top: 40px;
 }
+#copy-btn {
+    display: none; /* Ensure button is displayed */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #1C1C1C; /* Green background */
+    color: white; /* White text */
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 17px;
+}
+
+#copy-btn:hover {
+    background-color: #423838; /* Darker green on hover */
+}
