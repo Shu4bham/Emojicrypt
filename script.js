@@ -53,6 +53,14 @@ function encryption() {
         var input = document.getElementById("textmsg").value;
 
         // Create JWT payload
+        if(input == ""){
+            document.querySelector("#result").innerHTML = "Please enter text some text to encode";
+            return;
+        }
+        if(pass == ""){
+            document.querySelector("#result").innerHTML = "Please enter a Password for encryption";
+            return;
+        }
         var payload = { msg: input };
 
         // Generate JWT using the password as the secret
@@ -72,6 +80,16 @@ function decryption() {
         var clutter2 = '';
         var input2 = document.querySelector("#emojimsg").value;
         var finalPass = document.querySelector("#finalpassword").value;
+        if(input2 == ""){
+            document.querySelector("#result").innerHTML = "Please enter Emojis to decode";
+            document.querySelector("#result").style.display = "block";
+            return;
+        }
+        if(finalPass == ""){
+            document.querySelector("#result").innerHTML = "Please enter a Password for decryption";
+            document.querySelector("#result").style.display = "block";
+            return;
+        }
         try {
             var emojis = decodeEmojisToChars(input2);
             var token = decodeEmojisToToken(emojis);
